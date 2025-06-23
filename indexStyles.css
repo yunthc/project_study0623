@@ -9,8 +9,9 @@ body {
   color: white;
   
   /* 동적인 무지개 배경 애니메이션 */
-  background: circular_gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+  background: linear-gradient(0deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
   background-size: 400% 400%;
+  animation: gradient-animation 5s ease infinite;
 }
 
 
