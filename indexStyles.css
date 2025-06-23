@@ -1,31 +1,41 @@
-/* 전체 페이지 기본 스타일 */
+/* body에는 기본적인 배경과 글꼴만 설정합니다. */
 body {
   margin: 0;
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   
   /* 동적인 무지개 배경 애니메이션 */
   background: linear-gradient(0deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
   background-size: 400% 400%;
-  animation: gradient-animation 5s ease infinite;
+  animation: gradient-animation 2s ease infinite;
 }
 
+/* body에서 flex 관련 스타일을 #app으로 옮깁니다. */
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-/* 콘텐츠를 담을 중앙 컨테이너 */
+/* 배경 애니메이션 키프레임 */
+@keyframes gradient-animation {
+  0% { background-position: 0% 100%; }
+  50% { background-position: 100% 00%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* .content-wrapper 이하 나머지 스타일은 그대로 둡니다. */
 .content-wrapper {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.4); /* 내용을 잘 보이게 하기 위한 반투명 배경 */
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 40px 60px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 제목 스타일 */
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -39,7 +49,6 @@ p {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* 문제의 그 버튼 스타일 */
 #forbidden-button {
   padding: 15px 30px;
   font-size: 1.2rem;
@@ -53,7 +62,6 @@ p {
   box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
 }
 
-/* 버튼에 마우스를 올렸을 때 효과 */
 #forbidden-button:hover {
   transform: translateY(-5px) scale(1.05);
   background-color: #ff0055;
